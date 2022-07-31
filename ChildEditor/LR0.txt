@@ -1,0 +1,17 @@
+End PrimitiveTypes program identifiers AssignmentOperator Semicolon String KeywordsIf Symbol StartBlock EndBlock RelationalOperator ConditionalOperator ArithmeticOperator UnaryOperator KeywordsLoop IntegerNumbers FloatNumbers Boolean Charecter e
+Program Inside Initialization Value Declaration Selection Selection2 Selection3 S S2 Expression Expression2 Loop Loop2
+Program -> program Inside Program | Inside Program | End
+Inside -> Initialization | Declaration | Selection | Expression | Loop
+Initialization -> PrimitiveTypes identifiers AssignmentOperator Value Semicolon
+Value -> IntegerNumbers | FloatNumbers | Boolean | Charecter | String 
+Declaration -> PrimitiveTypes identifiers Semicolon
+Selection -> KeywordsIf Selection2
+Selection2 -> Symbol S Symbol StartBlock Inside EndBlock Selection3
+Selection3 -> Selection | e | StartBlock Inside EndBlock
+S -> Expression RelationalOperator Expression S2 
+S2 -> ConditionalOperator S | e 
+Expression -> Value | identifiers Expression2
+Expression2 -> ArithmeticOperator identifiers | RelationalOperator identifiers | UnaryOperator | e
+Expression2 -> ArithmeticOperator Value | RelationalOperator Value | UnaryOperator | e
+Loop -> KeywordsLoop Symbol Loop2
+Loop2 -> Initialization Expression Semicolon Expression Symbol StartBlock Inside EndBlock | S Symbol StartBlock Inside EndBlock
